@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Username is required'],
     unique: true,
+    index: false,
     trim: true,
     minlength: [3, 'Username must be at least 3 characters'],
     maxlength: [20, 'Username cannot exceed 20 characters'],
@@ -41,7 +42,6 @@ const userSchema = new mongoose.Schema({
 });
 
 // Index for performance optimization
-userSchema.index({ username: 1 });
 userSchema.index({ socketId: 1 });
 userSchema.index({ isOnline: 1 });
 

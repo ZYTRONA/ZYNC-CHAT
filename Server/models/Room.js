@@ -5,6 +5,7 @@ const roomSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Room name is required'],
     unique: true,
+    index: false,
     trim: true,
     minlength: [3, 'Room name must be at least 3 characters'],
     maxlength: [50, 'Room name cannot exceed 50 characters'],
@@ -39,7 +40,6 @@ const roomSchema = new mongoose.Schema({
 });
 
 // Indexes for performance optimization
-roomSchema.index({ name: 1 });
 roomSchema.index({ isActive: 1, lastActivity: -1 });
 roomSchema.index({ members: 1 });
 
