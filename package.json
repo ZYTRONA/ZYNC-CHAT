@@ -1,0 +1,24 @@
+{
+  "name": "zync-chat-root",
+  "version": "1.0.0",
+  "description": "Production-ready MERN stack chat application",
+  "scripts": {
+    "install-all": "cd Server && npm install && cd ../Client && npm install",
+    "dev": "concurrently \"cd Server && npm run dev\" \"cd Client && npm start\"",
+    "start": "cd Server && npm start",
+    "build": "cd Client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "mern",
+    "socket.io",
+    "real-time",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
