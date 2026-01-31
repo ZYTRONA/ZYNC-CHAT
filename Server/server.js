@@ -22,6 +22,10 @@ const server = http.createServer(app);
 // Connect to MongoDB
 connectDB();
 
+// Trust proxy - Required for Render.com and other hosting platforms
+// This allows express-rate-limit to correctly identify users behind proxies
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet({
   contentSecurityPolicy: false,
