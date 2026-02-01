@@ -1,6 +1,22 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000';
+// Determine Socket URL based on environment
+const getSocketUrl = () => {
+  // Use environment variable if set
+  if (process.env.REACT_APP_SOCKET_URL) {
+    return process.env.REACT_APP_SOCKET_URL;
+  }
+  
+  // Production: Use the Render backend
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://zync-chat-ed7e.onrender.com';
+  }
+  
+  // Development: Use localhost
+  return 'http://localhost:5000';
+};
+
+const SOCKET_URL = getSocketUrl();
 
 let socket = null;
 

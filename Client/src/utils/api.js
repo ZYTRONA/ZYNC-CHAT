@@ -1,6 +1,22 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Determine API URL based on environment
+const getApiUrl = () => {
+  // Use environment variable if set
+  if (process.env.REACT_APP_API_URL) {
+    return process.env.REACT_APP_API_URL;
+  }
+  
+  // Production: Use the Render backend
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://zync-chat-ed7e.onrender.com';
+  }
+  
+  // Development: Use localhost
+  return 'http://localhost:5000';
+};
+
+const API_URL = getApiUrl();
 
 const api = axios.create({
   baseURL: API_URL,
