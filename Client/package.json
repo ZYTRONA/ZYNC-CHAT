@@ -54,7 +54,7 @@
     "workbox-google-analytics": "^7.0.0",
     "inflight": "^1.0.6",
     "webpack-dev-server": "^5.2.3",
-    "eslint": "^9.39.2",
+    "eslint": "^8.57.1",
     "nth-check": "^2.1.1"
   },
   "proxy": "http://localhost:5000"
