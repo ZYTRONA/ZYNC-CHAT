@@ -6,7 +6,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "5.1.0-next.26",
     "socket.io-client": "^4.6.1",
     "react-router-dom": "^6.21.1",
     "axios": "^1.6.5",
@@ -38,8 +38,24 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.4.0"
+  },
+  "overrides": {
+    "rimraf": "^4.4.1",
+    "glob": "^9.3.5",
+    "sourcemap-codec": "npm:@jridgewell/sourcemap-codec@^1.4.15",
+    "rollup-plugin-terser": "npm:@rollup/plugin-terser@^0.4.4",
+    "whatwg-encoding": "npm:@exodus/bytes@^1.0.5",
+    "w3c-hr-time": "^1.0.2",
+    "stable": "^0.1.8",
+    "q": "^1.5.1",
+    "workbox-cacheable-response": "^7.0.0",
+    "workbox-google-analytics": "^7.0.0",
+    "inflight": "^1.0.6",
+    "webpack-dev-server": "^5.2.3",
+    "eslint": "^9.39.2",
+    "nth-check": "^2.1.1"
   },
   "proxy": "http://localhost:5000"
 }
